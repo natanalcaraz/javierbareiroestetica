@@ -36,18 +36,3 @@ const timer = setInterval(() => {
   document.getElementById("minutes").textContent = minutes;
   document.getElementById("seconds").textContent = seconds;
 }, 1000);
-
-// === SERPENTINAS ALEATORIAS ===
-const serpentinasContainer = document.getElementById("serpentinas");
-
-function crearSerpentina() {
-  const serp = document.createElement("div");
-  serp.classList.add("serpentina");
-  serp.style.left = Math.random() * 100 + "vw";
-  serp.style.animationDuration = 4 + Math.random() * 3 + "s";
-  serpentinasContainer.appendChild(serp);
-
-  setTimeout(() => serp.remove(), 7000);
-}
-
-setInterval(crearSerpentina, 400);
