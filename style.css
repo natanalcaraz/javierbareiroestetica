@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+/* --- Portada --- */
+.hero {
+  background: url('foto-portada.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.title {
+  font-size: 3rem;
+  color: #c8a450;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+
+.date {
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #c8a450, #444);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  z-index: 1;
+  font-weight: bold;
+}
+
+/* --- Secciones --- */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #c8a450;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: linear-gradient(90deg, #c8a450, #444);
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* --- Contador --- */
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#timer div {
+  background: #222;
+  border: 2px solid #c8a450;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 90px;
+}
+
+#timer span {
+  font-size: 1.8rem;
+  color: #c8a450;
+  display: block;
+}
+
+/* --- Galería --- */
+.gallery .photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #c8a450;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Frase especial --- */
+.quote-section {
+  background-color: #c8a450;
+  color: #111;
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 40px 20px;
+  font-weight: 500;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #000;
+  color: #c8a450;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+/* --- Música flotante --- */
+.music-player {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+}
+
+.play-btn {
+  background-color: #c8a450;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: #111;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  background-color: #d4b96f;
+}
+
+/* --- Animaciones --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
