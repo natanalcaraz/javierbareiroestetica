@@ -1,40 +1,79 @@
-// ---- CONTADOR ----
-const targetDate = new Date("November 8, 2025 21:00:00").getTime();
-const timer = document.getElementById("timer");
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inauguración — Javier Bareiro Estilista Unisex</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  <!-- Portada -->
+  <section class="hero fade-in">
+    <div class="overlay"></div>
+    <h1 class="title">Javier Bareiro</h1>
+    <p class="subtitle">Estilista Unisex</p>
+    <div class="date">Inauguración — Miércoles 26 de noviembre • 21:00 hs</div>
+  </section>
 
-  if (distance < 0) {
-    timer.innerHTML = "¡Hoy es la gran inauguración! ✨";
-    return;
-  }
+  <!-- Sección ubicación -->
+  <section class="location slide-up">
+    <h2>Nuevo centro de estética</h2>
+    <p>Vení a celebrar con nosotros la apertura de un espacio pensado para vos.  
+    Elegancia, estilo y una nueva experiencia en belleza.</p>
+    <a href="https://maps.app.goo.gl/" target="_blank" class="btn">Ver ubicación</a>
+  </section>
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <!-- Contador regresivo -->
+  <section class="countdown slide-up">
+    <h2>¡Comienza la cuenta regresiva!</h2>
+    <div id="timer">
+      <div><span id="days">00</span><p>Días</p></div>
+      <div><span id="hours">00</span><p>Horas</p></div>
+      <div><span id="minutes">00</span><p>Minutos</p></div>
+      <div><span id="seconds">00</span><p>Segundos</p></div>
+    </div>
+  </section>
 
-  timer.innerHTML = `
-    <div><span>${days}</span><small>Días</small></div>
-    <div><span>${hours}</span><small>Horas</small></div>
-    <div><span>${minutes}</span><small>Minutos</small></div>
-    <div><span>${seconds}</span><small>Segundos</small></div>
-  `;
-}, 1000);
+  <!-- Galería -->
+  <section class="gallery fade-in">
+    <h2>Un adelanto de lo que te espera</h2>
+    <div class="photos">
+      <img src="foto1.jpg" alt="Salón de Javier Bareiro">
+      <img src="foto2.jpg" alt="Equipo de trabajo">
+      <img src="foto3.jpg" alt="Espacio moderno">
+      <img src="foto4.jpg" alt="Detalles de diseño">
+    </div>
+  </section>
 
-// ---- REPRODUCTOR ----
-const musicBtn = document.getElementById("music-btn");
-const playIcon = document.getElementById("play-icon");
-const bgMusic = document.getElementById("bg-music");
+  <!-- Frase especial -->
+  <section class="quote-section slide-up">
+    <p>✨ Una nueva etapa comienza ✨<br>
+    Te invitamos a compartir este gran logro, lleno de estilo, dedicación y pasión por la belleza.</p>
+  </section>
 
-musicBtn.addEventListener("click", () => {
-  if (bgMusic.paused) {
-    bgMusic.play();
-    playIcon.textContent = "⏸️";
-  } else {
-    bgMusic.pause();
-    playIcon.textContent = "▶️";
-  }
-});
+  <!-- Confirmación -->
+  <section class="rsvp slide-up">
+    <h2>Confirmá tu asistencia</h2>
+    <p>Escribinos por WhatsApp para confirmar tu presencia:</p>
+    <p><strong>+54 3718 540093</strong></p>
+    <a href="https://wa.me/543718540093?text=Confirmo%20mi%20asistencia%20a%20la%20inauguración%20de%20Javier%20Bareiro!" target="_blank" class="btn">Confirmar asistencia</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Javier Bareiro — Estilista Unisex 💇‍♂️</p>
+  </footer>
+
+  <!-- Música -->
+  <div class="music-player">
+    <button id="musicBtn" class="play-btn">
+      <span id="musicIcon">▶️</span>
+    </button>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+</body>
+</html>
