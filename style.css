@@ -71,3 +71,72 @@ section {
 }
 
 #timer div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  width: 80px;
+}
+
+#timer span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Galería */
+.gallery .photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Música */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.play-btn {
+  background: #e0b3ff;
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+.play-btn:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.slide-up {
+  animation: slideUp 1.2s ease forwards;
+}
+@keyframes slideUp {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
