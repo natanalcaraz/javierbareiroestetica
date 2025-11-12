@@ -11,39 +11,59 @@ section {
   padding: 60px 20px;
 }
 
-/* HERO */
+/* --- Portada --- */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('portada.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.overlay {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: url('backgound.jpg') center/cover no-repeat;
+  opacity: 0.35; /* 🔹 ajustá el valor según quieras más o menos visible (0.2–0.5) */
+  z-index: 0;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* Leve filtro oscuro encima de la imagen */
+  z-index: 1;
+}
+
+.title,
+.subtitle,
+.date {
+  position: relative;
+  z-index: 2;
+  color: #fff;
 }
 
 .title {
   font-size: 3rem;
-  font-weight: 700;
-  z-index: 2;
+  letter-spacing: 1px;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  z-index: 2;
-  color: #e0b3ff;
+  margin-top: 0.3rem;
 }
 
 .date {
-  z-index: 2;
-  margin-top: 10px;
-  font-weight: 600;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #4b0082, #b19cd9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
 }
 
 /* Botones */
