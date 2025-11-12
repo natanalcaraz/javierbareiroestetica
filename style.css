@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
-  background-color: #111;
-  color: #f9f9f9;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
   overflow-x: hidden;
 }
 
 /* --- Portada --- */
 .hero {
-  background: url('foto-portada.jpg') center/cover no-repeat;
+  background: url('img/foto-portada.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,33 +28,34 @@ body {
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.title, .subtitle, .date {
+  z-index: 1;
+  color: white;
 }
 
 .title {
   font-size: 3rem;
-  color: #c8a450;
-  z-index: 1;
+  font-weight: 700;
+  color: #f0c040;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #fff;
   margin-top: 0.5rem;
-  z-index: 1;
 }
 
 .date {
   margin-top: 1rem;
-  background: linear-gradient(90deg, #c8a450, #444);
-  color: white;
-  padding: 10px 25px;
+  background: linear-gradient(90deg, #000000, #f0c040);
+  padding: 10px 20px;
   border-radius: 25px;
-  z-index: 1;
   font-weight: bold;
 }
 
-/* --- Secciones --- */
+/* --- Secciones generales --- */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -62,108 +63,67 @@ section {
 
 h2 {
   font-size: 1.8rem;
-  color: #c8a450;
+  color: #000;
   margin-bottom: 1rem;
 }
 
 .btn {
-  background: linear-gradient(90deg, #c8a450, #444);
+  background: linear-gradient(90deg, #000, #f0c040);
   color: white;
   text-decoration: none;
   padding: 12px 30px;
-  border-radius: 30px;
+  border-radius: 25px;
   font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 
 /* --- Contador --- */
 #timer {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 #timer div {
-  background: #222;
-  border: 2px solid #c8a450;
-  border-radius: 10px;
-  padding: 10px 15px;
-  width: 90px;
+  background: white;
+  border: 2px solid #f0c040;
+  border-radius: 12px;
+  padding: 15px 25px;
+  min-width: 100px;
 }
 
 #timer span {
-  font-size: 1.8rem;
-  color: #c8a450;
+  font-size: 2rem;
+  color: #000;
   display: block;
 }
 
-/* --- Galería --- */
-.gallery .photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid #c8a450;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* --- Frase especial --- */
-.quote-section {
-  background-color: #c8a450;
-  color: #111;
-  padding: 40px 20px;
-  border-radius: 20px;
-  margin: 40px 20px;
-  font-weight: 500;
-}
-
-/* --- Footer --- */
-footer {
-  background-color: #000;
-  color: #c8a450;
-  text-align: center;
-  padding: 15px;
+#timer small {
   font-size: 0.9rem;
+  color: #555;
 }
 
-/* --- Música flotante --- */
-.music-player {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 9999;
+/* --- Regalo --- */
+.gift-box {
+  background: #fff;
+  border: 2px solid #f0c040;
+  border-radius: 12px;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.play-btn {
-  background-color: #c8a450;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.8rem;
-  color: #111;
-  padding: 15px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-.play-btn:hover {
-  transform: scale(1.1);
-  background-color: #d4b96f;
+.alias {
+  color: #f0c040;
+  font-weight: bold;
 }
 
 /* --- Animaciones --- */
@@ -173,12 +133,6 @@ footer {
   animation: fadeIn 1.2s ease forwards;
 }
 
-.slide-up {
-  opacity: 0;
-  transform: translateY(50px);
-  animation: slideUp 1s ease forwards;
-}
-
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -186,9 +140,35 @@ footer {
   }
 }
 
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* --- Footer --- */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* --- Botón de música --- */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #000, #f0c040);
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
 }
