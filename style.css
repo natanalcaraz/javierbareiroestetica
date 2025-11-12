@@ -27,7 +27,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('backgound.jpg') center/cover no-repeat;
+  background: url('background.jpg') center/cover no-repeat;
   opacity: 0.35; /* 🔹 ajustá el valor según quieras más o menos visible (0.2–0.5) */
   z-index: 0;
 }
